@@ -2,7 +2,7 @@
 
 body {
   font-family: sans-serif;
-  background-color: #f8f9fa;
+  background-color: #a94457; /* rosado oscuro */
   padding: 2rem;
   margin: 0;
 }
@@ -10,7 +10,7 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #333;
+  color: #fff;
 }
 
 #creditos {
@@ -18,7 +18,7 @@ h1 {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #222;
+  color: #fff;
 }
 
 #malla {
@@ -28,16 +28,16 @@ h1 {
 }
 
 .semestre {
-  border: 2px solid #ccc;
+  border: 2px solid #cc8f9c;
   border-radius: 10px;
   padding: 1rem;
-  background-color: #fff;
+  background-color: #f2b6c1; /* rosado claro */
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .semestre h2 {
   text-align: center;
-  color: #444;
+  color: #5b1f29;
   margin-top: 0;
 }
 
