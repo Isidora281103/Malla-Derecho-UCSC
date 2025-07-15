@@ -158,6 +158,7 @@ const prerrequisitos = {
   "Filosofía del Derecho": ["Fundamentos Filosóficos"],
   "Anteproyecto de Investigación": ["235"],
   "Derecho Internacional Privado": ["Derecho Civil IV"],
+  "Derecho Civil VIII": ["Derecho Civil VII"],
   "Tesina": ["Anteproyecto de Investigación"],
   "Optativo de Profundización": ["173"],
   "Practica Profesional": ["Seminario Jurídico III"]
