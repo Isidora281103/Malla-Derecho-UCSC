@@ -1,176 +1,126 @@
-// script.js
+let creditosTotales = 0;
 
-const ramosData = [
-  {
-    semestre: "Semestre 1",
-    ramos: [
-      { nombre: "Derecho Romano", creditos: 10 },
-      { nombre: "Derecho Político", creditos: 10 },
-      { nombre: "Teoría del Derecho", creditos: 10 },
-      { nombre: "Historia del Derecho", creditos: 4 },
-      { nombre: "Fundamentos Filosóficos", creditos: 4 },
-      { nombre: "Técnicas para el manejo del estrés", creditos: 4 }
-    ]
-  },
-  {
-    semestre: "Semestre 2",
-    ramos: [
-      { nombre: "Derecho Económico I", creditos: 4 },
-      { nombre: "Fundamentos Teológicos", creditos: 4 },
-      { nombre: "Integración del Saber I", creditos: 4 }
-    ]
-  },
-  {
-    semestre: "Semestre 3",
-    ramos: [
-      { nombre: "Derecho Civil I", creditos: 5, prerequisitos: ["Derecho Romano", "Teoría del Derecho"] },
-      { nombre: "Derecho Procesal I", creditos: 5 },
-      { nombre: "Derecho Constitucional I", creditos: 4, prerequisitos: ["Derecho Político"] },
-      { nombre: "Derecho Internacional Público I", creditos: 4, prerequisitos: ["Derecho Político"] },
-      { nombre: "Derecho Económico II", creditos: 4, prerequisitos: ["Derecho Económico I"] },
-      { nombre: "Derecho Canónico", creditos: 3, prerequisitos: ["Fundamentos Teológicos"] },
-      { nombre: "Integración del Saber II", creditos: 4 }
-    ]
-  },
-  {
-     semestre: "Semestre 4",
-    ramos: [
-      { nombre: "Derecho Civil II", creditos: 5, prerequisitos: ["Derecho Civil I"] },
-      { nombre: "Derecho Procesal II", creditos: 5, prerequisitos: ["Derecho Procesal I"] },
-      { nombre: "Derecho Constitucional II", creditos: 4, prerequisitos: ["Derecho Constitucional I"] },
-      { nombre: "Derecho Internacional Público II", creditos: 4, prerequisitos: ["Derecho Internacional Público I"] },
-      { nombre: "Derecho Económico III", creditos: 4, prerequisitos: ["Derecho Económico II"] },
-      { nombre: "Inglés I", creditos: 4 },
-      { nombre: "Seminario Jurídico I", creditos: 4, prerequisitos: ["Derecho Civil I", "Derecho Procesal I"] }
-    ]
-  },
-  {
-    semestre: "Semestre 5",
-    ramos: [
-      { nombre: "Derecho Civil III", creditos: 5, prerequisitos: ["Derecho Civil II"] },
-      { nombre: "Derecho Procesal III", creditos: 5, prerequisitos: ["Derecho Procesal II"] },
-      { nombre: "Derecho Penal I", creditos: 4, prerequisitos: ["54 créditos"] },
-      { nombre: "Derecho Comercial I", creditos: 4, prerequisitos: ["Derecho Civil II"] },
-      { nombre: "Derecho del Trabajo I", creditos: 4, prerequisitos: ["Teoría del Derecho"] },
-      { nombre: "Derecho Administrativo I", creditos: 4, prerequisitos: ["Derecho Constitucional I"] },
-      { nombre: "Integración del Saber IV", creditos: 4 }
-    ]
-  },
-  {
-    semestre: "Semestre 6",
-    ramos: [
-      { nombre: "Derecho Civil IV", creditos: 5, prerequisitos: ["Derecho Civil III"] },
-      { nombre: "Derecho Procesal IV", creditos: 5, prerequisitos: ["Derecho Procesal III"] },
-      { nombre: "Derecho Penal II", creditos: 4, prerequisitos: ["Derecho Penal I"] },
-      { nombre: "Derecho Comercial II", creditos: 4, prerequisitos: ["Derecho Comercial I"] },
-      { nombre: "Derecho del Trabajo II", creditos: 4, prerequisitos: ["Derecho del Trabajo I"] },
-      { nombre: "Derecho Administrativo II", creditos: 4, prerequisitos: ["Derecho Administrativo I"] },
-      { nombre: "Seminario Jurídico II", creditos: 4, prerequisitos: ["Derecho Civil III", "Derecho Procesal III", "Seminario Jurídico I"] }
-    ]
-  },
-  {
-    semestre: "Semestre 7",
-    ramos: [
-      { nombre: "Derecho Civil V", creditos: 5, prerequisitos: ["Derecho Civil IV"] },
-      { nombre: "Derecho Procesal V", creditos: 5, prerequisitos: ["Derecho Procesal IV"] },
-      { nombre: "Derecho Penal III", creditos: 4, prerequisitos: ["Derecho Penal II"] },
-      { nombre: "Derecho Comercial III", creditos: 4, prerequisitos: ["Derecho Comercial II"] },
-      { nombre: "Seguridad Social", creditos: 3, prerequisitos: ["Derecho del Trabajo I"] },
-      { nombre: "Derecho Tributario I", creditos: 4, prerequisitos: ["Derecho Económico III"] },
-      { nombre: "Litigación", creditos: 3, prerequisitos: ["Derecho Procesal IV"] },
-      { nombre: "Ética Profesional", creditos: 4, prerequisitos: ["54 créditos"] }
-    ]
-  },
-  {
-    semestre: "Semestre 8",
-    ramos: [
-      { nombre: "Derecho Civil VI", creditos: 5, prerequisitos: ["Derecho Civil V"] },
-      { nombre: "Derecho Procesal VI", creditos: 5, prerequisitos: ["Derecho Procesal V"] },
-      { nombre: "Derecho Penal IV", creditos: 4, prerequisitos: ["Derecho Penal III"] },
-      { nombre: "Derecho Comercial IV", creditos: 4, prerequisitos: ["Derecho Comercial III"] },
-      { nombre: "Derecho Tributario II", creditos: 4, prerequisitos: ["Derecho Tributario I"] },
-      { nombre: "Seminario Jurídico III", creditos: 4, prerequisitos: ["Derecho Civil V", "Derecho Procesal V", "Seminario Jurídico II"] },
-      { nombre: "Optativo de Profundización I", creditos: 4, prerequisitos: ["173 créditos"] }
-    ]
-  },
-  {
-    semestre: "Semestre 9",
-    ramos: [
-      { nombre: "Práctica Profesional", creditos: 12, prerequisitos: ["Seminario Jurídico III"] },
-      { nombre: "Derecho Civil VII", creditos: 5, prerequisitos: ["Derecho Civil VI"] },
-      { nombre: "Derecho Procesal VII", creditos: 5, prerequisitos: ["Derecho Procesal VI"] },
-      { nombre: "Anteproyecto de Investigación", creditos: 5, prerequisitos: ["235 créditos"] },
-      { nombre: "Derecho Internacional Privado", creditos: 3, prerequisitos: ["Derecho Civil IV"] },
-      { nombre: "Filosofía del Derecho", creditos: 3, prerequisitos: ["Fundamentos Filosóficos"] },
-      { nombre: "Optativo de Profundización II", creditos: 4, prerequisitos: ["173 créditos"] }
-    ]
-  },
-  {
-    semestre: "Semestre 10",
-    ramos: [
-      { nombre: "Derecho Civil VIII", creditos: 5, prerequisitos: ["Derecho Civil VII"] },
-      { nombre: "Tesina", creditos: 8, prerequisitos: ["Anteproyecto de Investigación"] },
-      { nombre: "Optativo de Profundización III", creditos: 4, prerequisitos: ["173 créditos"] },
-      { nombre: "Optativo de Profundización IV", creditos: 4, prerequisitos: ["173 créditos"] }
-    ]
-  }
-];
+// Prerrequisitos (por ID de ramo)
+const prerrequisitos = {
+  civil1: ["romano", "teoria"],
+  const1: ["politico"],
+  intl1: ["politico"],
+  eco2: ["eco1"],
+  canonico: ["teo"],
+  civil2: ["civil1"],
+  proc2: ["proc1"],
+  const2: ["const1"],
+  intl2: ["intl1"],
+  eco3: ["eco2"],
+  sem1: ["civil1", "proc1"],
 
-let creditosAprobados = 0;
-const creditosSpan = document.getElementById("creditos-aprobados");
-const malla = document.getElementById("malla");
-const aprobados = new Set();
+  civil3: ["civil2"],
+  proc3: ["proc2"],
+  penal1: ["cr:54"],
+  com1: ["civil2"],
+  trabajo1: ["teoria"],
+  admin1: ["const1"],
 
-function totalCreditosAprobados() {
-  return Array.from(aprobados).reduce((acc, nombre) => {
-    for (const semestre of ramosData) {
-      for (const ramo of semestre.ramos) {
-        if (ramo.nombre === nombre) return acc + ramo.creditos;
-      }
-    }
-    return acc;
-  }, 0);
+  civil4: ["civil3"],
+  proc4: ["proc3"],
+  penal2: ["penal1"],
+  com2: ["com1"],
+  trabajo2: ["trabajo1"],
+  admin2: ["admin1"],
+  sem2: ["civil3", "proc3", "sem1"],
+
+  civil5: ["civil4"],
+  proc5: ["proc4"],
+  penal3: ["penal2"],
+  com3: ["com2"],
+  ssocial: ["trabajo1"],
+  tributario1: ["eco3"],
+  litigacion: ["proc4"],
+  etica: ["cr:54"],
+
+  civil6: ["civil5"],
+  proc6: ["proc5"],
+  penal4: ["penal3"],
+  com4: ["com3"],
+  tributario2: ["tributario1"],
+  sem3: ["civil5", "proc5", "sem2"],
+
+  opt1: ["cr:173"],
+  opt2: ["cr:173"],
+  opt3: ["cr:173"],
+  opt4: ["cr:173"],
+
+  civil7: ["civil6"],
+  proc7: ["proc6"],
+  filoderecho: ["filosofia"],
+  anteproyecto: ["cr:235"],
+  privado: ["civil4"],
+
+  civil8: ["civil7"],
+  tesina: ["anteproyecto"],
+  practica: ["sem3"]
+};
+
+// Función para actualizar créditos
+function actualizarCreditos() {
+  const ramosAprobados = document.querySelectorAll(".ramo.aprobado");
+  creditosTotales = 0;
+  ramosAprobados.forEach(ramo => {
+    creditosTotales += parseInt(ramo.dataset.credito);
+  });
+  document.getElementById("totalCreditos").textContent = creditosTotales;
 }
 
-function crearMalla() {
-  malla.innerHTML = "";
-  ramosData.forEach((sem) => {
-    const divSemestre = document.createElement("div");
-    divSemestre.className = "semestre";
-    const titulo = document.createElement("h2");
-    titulo.textContent = sem.semestre;
-    divSemestre.appendChild(titulo);
+// Función para verificar si los prerrequisitos están cumplidos
+function prerrequisitosCumplidos(ramoID) {
+  const requisitos = prerrequisitos[ramoID];
+  if (!requisitos) return true;
 
-    sem.ramos.forEach((ramo) => {
-      const divRamo = document.createElement("div");
-      divRamo.className = "ramo";
-      divRamo.textContent = `${ramo.nombre} (${ramo.creditos} cr)`;
+  const aprobados = Array.from(document.querySelectorAll(".ramo.aprobado")).map(r => r.dataset.id);
 
-      const requisitos = ramo.prerequisitos || [];
-      const requisitosCumplidos = requisitos.every(req => aprobados.has(req));
-
-      if (!requisitosCumplidos && requisitos.length > 0) {
-        divRamo.classList.add("bloqueado");
-      }
-
-      if (aprobados.has(ramo.nombre)) {
-        divRamo.classList.add("aprobado");
-      }
-
-      divRamo.addEventListener("click", () => {
-        if (divRamo.classList.contains("bloqueado") || aprobados.has(ramo.nombre)) return;
-        aprobados.add(ramo.nombre);
-        divRamo.classList.add("aprobado");
-        creditosAprobados = totalCreditosAprobados();
-        creditosSpan.textContent = creditosAprobados;
-        crearMalla();
-      });
-
-      divSemestre.appendChild(divRamo);
-    });
-
-    malla.appendChild(divSemestre);
+  return requisitos.every(req => {
+    if (req.startsWith("cr:")) {
+      const minCreditos = parseInt(req.split(":")[1]);
+      return creditosTotales >= minCreditos;
+    }
+    return aprobados.includes(req);
   });
 }
 
-crearMalla();
+// Función para bloquear/desbloquear ramos según los requisitos
+function actualizarBloqueos() {
+  document.querySelectorAll(".ramo").forEach(ramo => {
+    const id = ramo.dataset.id;
+
+    // Si ya está aprobado, no se bloquea
+    if (ramo.classList.contains("aprobado")) {
+      ramo.classList.remove("bloqueado");
+      ramo.style.pointerEvents = "auto";
+      return;
+    }
+
+    if (prerrequisitosCumplidos(id)) {
+      ramo.classList.remove("bloqueado");
+      ramo.style.pointerEvents = "auto";
+    } else {
+      ramo.classList.add("bloqueado");
+      ramo.style.pointerEvents = "none";
+    }
+  });
+}
+
+// Inicializar eventos y estado inicial
+document.querySelectorAll(".ramo").forEach(ramo => {
+  ramo.addEventListener("click", () => {
+    if (ramo.classList.contains("bloqueado")) return;
+
+    ramo.classList.toggle("aprobado");
+
+    actualizarCreditos();
+    actualizarBloqueos();
+  });
+});
+
+// Llamar al inicio
+actualizarCreditos();
+actualizarBloqueos();
