@@ -1,6 +1,6 @@
-/* Fondo general rosado oscuro */
+/* Fondo general */
 body {
-  background-color: #802c5b;
+  background-color: #802c5b; /* rosado oscuro */
   color: white;
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -8,31 +8,45 @@ body {
   min-height: 100vh;
 }
 
-/* Título principal */
+/* Título */
 h1 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-/* Créditos */
+/* Créditos aprobados */
 #creditos {
   margin: 20px 0;
   font-weight: bold;
   font-size: 1.2em;
+  text-align: center;
 }
 
-/* Bloque general de la malla */
-.malla {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+/* Grilla de semestres: 2 columnas */
+.grid-semestres {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
 }
 
-/* Cada semestre en columna */
-.semestre {
-  background-color: #f2aacb;
+/* Recuadro de cada semestre */
+.cuadro-semestre {
+  background-color: #f2aacb; /* rosado claro */
+  border: 3px solid #fff; /* borde blanco visible */
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Título del semestre dentro del recuadro */
+.cuadro-semestre h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #3d3d3d;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 6px;
 }
 
 /* Contenedor vertical de ramos */
@@ -40,35 +54,31 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 10px;
 }
 
-/* Ramo individual */
+/* Botón/etiqueta de cada ramo */
 .ramo {
   background-color: #f7c3d7;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
   text-align: center;
-  user-select: none;
-  transition: all 0.3s ease;
   font-weight: bold;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Ramo aprobado */
+/* Aprobado (clickeado) */
 .ramo.aprobado {
   background-color: #c7a7d9;
   text-decoration: line-through;
   color: #3d3d3d;
 }
 
-/* Ramo bloqueado por prerrequisitos */
+/* Bloqueado por prerrequisitos */
 .ramo.bloqueado {
   background-color: #3a3a3a;
-  color: #cccccc;
+  color: #ccc;
   cursor: not-allowed;
-  opacity: 0.6;
   pointer-events: none;
+  opacity: 0.7;
 }
