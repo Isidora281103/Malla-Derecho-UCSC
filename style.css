@@ -1,69 +1,53 @@
  <style>
     body {
-      font-family: sans-serif;
-      background-color: #a94457;
-      padding: 2rem;
-      margin: 0;
-      color: #fff;
-    }
+  background-color: #8b5e83; /* rosado oscuro */
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #fff;
-    }
+.semestre {
+  margin-bottom: 40px;
+  background-color: #dbaec3; /* rosado claro */
+  padding: 10px;
+  border-radius: 10px;
+}
 
-    #creditos {
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #fff;
-    }
+h1 {
+  text-align: center;
+}
 
-    #malla {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
-    }
+.ramos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-    .semestre {
-      border: 2px solid #cc8f9c;
-      border-radius: 10px;
-      padding: 1rem;
-      background-color: #f2b6c1;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+.ramo {
+  background-color: #f7c3d7; /* rosado */
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+  user-select: none;
+  transition: all 0.3s ease;
+}
 
-    .semestre h2 {
-      text-align: center;
-      color: #5b1f29;
-      margin-top: 0;
-    }
+.ramo.aprobado {
+  background-color: #c7a7d9; /* morado pastel */
+  text-decoration: line-through;
+  color: #3d3d3d;
+}
 
-    .ramo {
-      background-color: #f8d7da;
-      padding: 0.6rem 0.8rem;
-      margin: 0.3rem 0;
-      border-radius: 6px;
-      cursor: pointer;
-      user-select: none;
-      transition: all 0.2s ease-in-out;
-    }
+.ramo.bloqueado {
+  background-color: #555555;
+  color: #ccc;
+  cursor: not-allowed;
+}
 
-    .ramo:hover {
-      opacity: 0.85;
-    }
-
-    .ramo.aprobado {
-      background-color: #d6c4ec;
-      text-decoration: line-through;
-      color: #444;
-    }
-
-    .ramo.bloqueado {
-      background-color: #2e2e2e; /* gris oscuro profundo */
-      color: #cccccc;
-      pointer-events: none;
-    }
+#creditos {
+  margin: 10px 0;
+  font-weight: bold;
+}
   </style>
