@@ -17,7 +17,7 @@ const ramosData = [
     ramos: [
       { nombre: "Derecho Económico I", creditos: 4 },
       { nombre: "Fundamentos Teológicos", creditos: 4 },
-      { nombre: "Integración del Saber", creditos: 4 }
+      { nombre: "Integración del Saber II", creditos: 4 }
     ]
   },
   {
@@ -29,7 +29,7 @@ const ramosData = [
       { nombre: "Derecho Internacional Público I", creditos: 4, prerequisitos: ["Derecho Político"] },
       { nombre: "Derecho Económico II", creditos: 4, prerequisitos: ["Derecho Económico I"] },
       { nombre: "Derecho Canónico", creditos: 3, prerequisitos: ["Fundamentos Teológicos"] },
-      { nombre: "Integración del Saber", creditos: 4 }
+      { nombre: "Integración del Saber  III", creditos: 4 }
     ]
   },
   {
@@ -53,7 +53,7 @@ const ramosData = [
       { nombre: "Derecho Comercial I", creditos: 4, prerequisitos: ["Derecho Civil II"] },
       { nombre: "Derecho del Trabajo I", creditos: 4, prerequisitos: ["Teoría del Derecho"] },
       { nombre: "Derecho Administrativo I", creditos: 4, prerequisitos: ["Derecho Constitucional I"] },
-      { nombre: "Integración del Saber", creditos: 4 }
+      { nombre: "Integración del Saber IV", creditos: 4 }
     ]
   },
   {
