@@ -62,7 +62,7 @@ h1 {
 }
 
 .ramo.bloqueado {
-  background-color: #d3d3d3; /* gris para ramos bloqueados */
+  background-color: #d3d3d3; /* gris claro para ramos bloqueados */
   color: #888;
   pointer-events: none;
 }
