@@ -1,68 +1,69 @@
-/* style.css */
+ <style>
+    body {
+      font-family: sans-serif;
+      background-color: #a94457;
+      padding: 2rem;
+      margin: 0;
+      color: #fff;
+    }
 
-body {
-  font-family: sans-serif;
-  background-color: #a94457; /* rosado oscuro */
-  padding: 2rem;
-  margin: 0;
-}
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
 
-h1 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #fff;
-}
+    #creditos {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
 
-#creditos {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #fff;
-}
+    #malla {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
 
-#malla {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
+    .semestre {
+      border: 2px solid #cc8f9c;
+      border-radius: 10px;
+      padding: 1rem;
+      background-color: #f2b6c1;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
 
-.semestre {
-  border: 2px solid #cc8f9c;
-  border-radius: 10px;
-  padding: 1rem;
-  background-color: #f2b6c1; /* rosado claro */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+    .semestre h2 {
+      text-align: center;
+      color: #5b1f29;
+      margin-top: 0;
+    }
 
-.semestre h2 {
-  text-align: center;
-  color: #5b1f29;
-  margin-top: 0;
-}
+    .ramo {
+      background-color: #f8d7da;
+      padding: 0.6rem 0.8rem;
+      margin: 0.3rem 0;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease-in-out;
+    }
 
-.ramo {
-  background-color: #f8d7da; /* rosado para no aprobado */
-  padding: 0.6rem 0.8rem;
-  margin: 0.3rem 0;
-  border-radius: 6px;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.2s ease-in-out;
-}
+    .ramo:hover {
+      opacity: 0.85;
+    }
 
-.ramo:hover {
-  opacity: 0.85;
-}
+    .ramo.aprobado {
+      background-color: #d6c4ec;
+      text-decoration: line-through;
+      color: #444;
+    }
 
-.ramo.aprobado {
-  background-color: #d6c4ec; /* morado pastel */
-  text-decoration: line-through;
-  color: #444;
-}
-
-.ramo.bloqueado {
-  background-color: #d3d3d3; /* gris claro para ramos bloqueados */
-  color: #888;
-  pointer-events: none;
-}
+    .ramo.bloqueado {
+      background-color: #2e2e2e; /* gris oscuro profundo */
+      color: #cccccc;
+      pointer-events: none;
+    }
+  </style>
