@@ -1,68 +1,74 @@
-/* style.css */
-
+/* Fondo general rosado oscuro */
 body {
-  font-family: sans-serif;
-  background-color: #f8f9fa;
-  padding: 2rem;
+  background-color: #802c5b;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
   margin: 0;
+  min-height: 100vh;
 }
 
+/* Título principal */
 h1 {
   text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
+  margin-bottom: 20px;
 }
 
+/* Créditos */
 #creditos {
-  text-align: center;
+  margin: 20px 0;
   font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #222;
+  font-size: 1.2em;
 }
 
-#malla {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+/* Bloque general de la malla */
+.malla {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
+/* Cada semestre en columna */
 .semestre {
-  border: 2px solid #ccc;
+  background-color: #f2aacb;
+  padding: 15px;
   border-radius: 10px;
-  padding: 1rem;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.semestre h2 {
-  text-align: center;
-  color: #444;
-  margin-top: 0;
+/* Contenedor vertical de ramos */
+.ramos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
 }
 
+/* Ramo individual */
 .ramo {
-  background-color: #f8d7da; /* rosado para no aprobado */
-  padding: 0.6rem 0.8rem;
-  margin: 0.3rem 0;
-  border-radius: 6px;
+  background-color: #f7c3d7;
+  padding: 12px;
+  border-radius: 8px;
   cursor: pointer;
+  width: 100%;
+  text-align: center;
   user-select: none;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.ramo:hover {
-  opacity: 0.85;
-}
-
+/* Ramo aprobado */
 .ramo.aprobado {
-  background-color: #d6c4ec; /* morado pastel */
+  background-color: #c7a7d9;
   text-decoration: line-through;
-  color: #444;
+  color: #3d3d3d;
 }
 
+/* Ramo bloqueado por prerrequisitos */
 .ramo.bloqueado {
-  background-color: #2e2e2e; /* gris oscuro profundo para ramos bloqueados */
-  color: #888;
+  background-color: #3a3a3a;
+  color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
   pointer-events: none;
 }
