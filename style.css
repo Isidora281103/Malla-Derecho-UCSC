@@ -1,84 +1,48 @@
-/* Fondo general */
 body {
-  background-color: #802c5b; /* rosado oscuro */
+  background-color: #7a004e; /* rosado oscuro */
+  font-family: sans-serif;
   color: white;
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  margin: 0;
-  min-height: 100vh;
-}
-
-/* Título */
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Créditos aprobados */
-#creditos {
-  margin: 20px 0;
-  font-weight: bold;
-  font-size: 1.2em;
-  text-align: center;
-}
-
-/* Grilla de semestres: 2 columnas */
-.grid-semestres {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
   padding: 20px;
 }
 
-/* Recuadro de cada semestre */
-.cuadro-semestre {
-  background-color: #f2aacb; /* rosado claro */
-  border: 3px solid #fff; /* borde blanco visible */
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Título del semestre dentro del recuadro */
-.cuadro-semestre h2 {
-  text-align: center;
-  margin-bottom: 12px;
-  color: #3d3d3d;
-  background-color: #fff;
-  padding: 5px;
-  border-radius: 6px;
-}
-
-/* Contenedor vertical de ramos */
-.ramos {
+.semestres {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-/* Botón/etiqueta de cada ramo */
+.semestre {
+  background-color: #ffc0cb; /* rosado claro */
+  padding: 15px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.semestre h2 {
+  color: #4a0033;
+}
+
 .ramo {
-  background-color: #f7c3d7;
-  padding: 10px;
+  background-color: #ffb6c1; /* rosado claro */
+  margin: 5px 0;
+  padding: 8px;
   border-radius: 6px;
-  text-align: center;
-  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
 }
 
-/* Aprobado (clickeado) */
 .ramo.aprobado {
-  background-color: #c7a7d9;
+  background-color: #d8bfd8; /* morado pastel */
   text-decoration: line-through;
-  color: #3d3d3d;
 }
 
-/* Bloqueado por prerrequisitos */
 .ramo.bloqueado {
-  background-color: #3a3a3a;
-  color: #ccc;
+  background-color: #555;
+  color: #aaa;
   cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.7;
+}
+
+.creditos {
+  margin-top: 20px;
+  font-size: 18px;
 }
