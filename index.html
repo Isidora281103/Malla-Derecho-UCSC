@@ -1,16 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malla Derecho UCSC</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #a94457;
+      padding: 2rem;
+      margin: 0;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+
+    #creditos {
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #fff;
+    }
+
+    #malla {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .semestre {
+      border: 2px solid #cc8f9c;
+      border-radius: 10px;
+      padding: 1rem;
+      background-color: #f2b6c1;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .semestre h2 {
+      text-align: center;
+      color: #5b1f29;
+      margin-top: 0;
+    }
+
+    .ramo {
+      background-color: #f8d7da;
+      padding: 0.6rem 0.8rem;
+      margin: 0.3rem 0;
+      border-radius: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .ramo:hover {
+      opacity: 0.85;
+    }
+
+    .ramo.aprobado {
+      background-color: #d6c4ec;
+      text-decoration: line-through;
+      color: #444;
+    }
+
+    .ramo.bloqueado {
+      background-color: #2e2e2e; /* gris oscuro profundo */
+      color: #cccccc;
+      pointer-events: none;
+    }
+  </style>
 </head>
 <body>
   <h1>Malla Derecho UCSC</h1>
   <div id="creditos">Créditos aprobados: <span id="creditos-aprobados">0</span></div>
   <div id="malla"></div>
-
-  <script src="script.js"></script>
 </body>
 </html>
