@@ -4,14 +4,72 @@
   <meta charset="UTF-8">
   <title>Malla Derecho UCSC</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #7a004e;
+      font-family: sans-serif;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    .creditos {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .semestres {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .semestre {
+      background-color: #ffc0cb;
+      padding: 15px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: left;
+    }
+
+    .semestre h2 {
+      color: #4a0033;
+    }
+
+    .ramo {
+      background-color: #f4a4b4; /* más oscuro que antes */
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .ramo.aprobado {
+      background-color: #d8bfd8;
+      text-decoration: line-through;
+    }
+
+    .ramo.bloqueado {
+      background-color: #555;
+      color: #aaa;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
     <h1>Malla Derecho UCSC</h1>
-    <div class="semestres" id="semestres"></div>
     <div class="creditos">
       Créditos aprobados: <span id="creditos-aprobados">0</span>
     </div>
+    <div class="semestres" id="semestres"></div>
   </div>
 
   <script src="script.js"></script>
