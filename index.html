@@ -2,149 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Malla Derecho UCSC</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Malla Derecho UCSC</h1>
-  <div id="creditos">Créditos aprobados: <span id="totalCreditos">0</span></div>
-
-  <div class="grid-semestres">
-
-    <!-- 1° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 1</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="romano" data-credito="10">Derecho Romano</div>
-        <div class="ramo" data-id="politico" data-credito="10">Derecho Político</div>
-        <div class="ramo" data-id="teoria" data-credito="10">Teoría del Derecho</div>
-        <div class="ramo" data-id="historia" data-credito="4">Historia del Derecho</div>
-        <div class="ramo" data-id="filosofia" data-credito="4">Fundamentos Filosóficos</div>
-        <div class="ramo" data-id="estres" data-credito="4">Técnicas para el Manejo del Estrés</div>
-      </div>
+  <div id="app">
+    <h1>Malla Derecho UCSC</h1>
+    <div class="semestres" id="semestres"></div>
+    <div class="creditos">
+      Créditos aprobados: <span id="creditos-aprobados">0</span>
     </div>
-
-    <!-- 2° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 2</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="eco1" data-credito="4">Derecho Económico I</div>
-        <div class="ramo" data-id="teo" data-credito="4">Fundamentos Teológicos</div>
-        <div class="ramo" data-id="integ1" data-credito="4">Integración del Saber II</div>
-      </div>
-    </div>
-
-    <!-- 3° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 3</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="civil1" data-credito="5">Derecho Civil I</div>
-        <div class="ramo" data-id="proc1" data-credito="5">Derecho Procesal I</div>
-        <div class="ramo" data-id="const1" data-credito="4">Derecho Constitucional I</div>
-        <div class="ramo" data-id="intl1" data-credito="4">Derecho Internacional Público I</div>
-        <div class="ramo" data-id="eco2" data-credito="4">Derecho Económico II</div>
-        <div class="ramo" data-id="canonico" data-credito="3">Derecho Canónico</div>
-        <div class="ramo" data-id="integ2" data-credito="4">Integración del Saber III</div>
-      </div>
-    </div>
-
-    <!-- 4° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 4</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="civil2" data-credito="5">Derecho Civil II</div>
-        <div class="ramo" data-id="proc2" data-credito="5">Derecho Procesal II</div>
-        <div class="ramo" data-id="const2" data-credito="4">Derecho Constitucional II</div>
-        <div class="ramo" data-id="intl2" data-credito="4">Derecho Internacional Público II</div>
-        <div class="ramo" data-id="eco3" data-credito="4">Derecho Económico III</div>
-        <div class="ramo" data-id="ingles" data-credito="4">Inglés I</div>
-        <div class="ramo" data-id="sem1" data-credito="4">Seminario Jurídico I</div>
-      </div>
-    </div>
-
-    <!-- 5° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 5</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="civil3" data-credito="5">Derecho Civil III</div>
-        <div class="ramo" data-id="proc3" data-credito="5">Derecho Procesal III</div>
-        <div class="ramo" data-id="penal1" data-credito="4">Derecho Penal I</div>
-        <div class="ramo" data-id="com1" data-credito="4">Derecho Comercial I</div>
-        <div class="ramo" data-id="trabajo1" data-credito="4">Derecho del Trabajo I</div>
-        <div class="ramo" data-id="admin1" data-credito="4">Derecho Administrativo I</div>
-        <div class="ramo" data-id="integ3" data-credito="4">Integración del Saber IV</div>
-      </div>
-    </div>
-
-    <!-- 6° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 6</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="civil4" data-credito="5">Derecho Civil IV</div>
-        <div class="ramo" data-id="proc4" data-credito="5">Derecho Procesal IV</div>
-        <div class="ramo" data-id="penal2" data-credito="4">Derecho Penal II</div>
-        <div class="ramo" data-id="com2" data-credito="4">Derecho Comercial II</div>
-        <div class="ramo" data-id="trabajo2" data-credito="4">Derecho del Trabajo II</div>
-        <div class="ramo" data-id="admin2" data-credito="4">Derecho Administrativo II</div>
-        <div class="ramo" data-id="sem2" data-credito="4">Seminario Jurídico II</div>
-      </div>
-    </div>
-
-    <!-- 7° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 7</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="civil5" data-credito="5">Derecho Civil V</div>
-        <div class="ramo" data-id="proc5" data-credito="5">Derecho Procesal V</div>
-        <div class="ramo" data-id="penal3" data-credito="4">Derecho Penal III</div>
-        <div class="ramo" data-id="com3" data-credito="4">Derecho Comercial III</div>
-        <div class="ramo" data-id="ssocial" data-credito="3">Seguridad Social</div>
-        <div class="ramo" data-id="tributario1" data-credito="4">Derecho Tributario I</div>
-        <div class="ramo" data-id="litigacion" data-credito="3">Litigación</div>
-        <div class="ramo" data-id="etica" data-credito="4">Ética Profesional</div>
-      </div>
-    </div>
-
-    <!-- 8° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 8</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="civil6" data-credito="5">Derecho Civil VI</div>
-        <div class="ramo" data-id="proc6" data-credito="5">Derecho Procesal VI</div>
-        <div class="ramo" data-id="penal4" data-credito="4">Derecho Penal IV</div>
-        <div class="ramo" data-id="com4" data-credito="4">Derecho Comercial IV</div>
-        <div class="ramo" data-id="tributario2" data-credito="4">Derecho Tributario II</div>
-        <div class="ramo" data-id="sem3" data-credito="4">Seminario Jurídico III</div>
-        <div class="ramo" data-id="opt1" data-credito="4">Optativo de Profundización</div>
-      </div>
-    </div>
-
-    <!-- 9° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 9</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="civil7" data-credito="5">Derecho Civil VII</div>
-        <div class="ramo" data-id="proc7" data-credito="5">Derecho Procesal VII</div>
-        <div class="ramo" data-id="anteproyecto" data-credito="5">Anteproyecto de Investigación</div>
-        <div class="ramo" data-id="privado" data-credito="3">Derecho Internacional Privado</div>
-        <div class="ramo" data-id="filoderecho" data-credito="3">Filosofía del Derecho</div>
-        <div class="ramo" data-id="opt2" data-credito="4">Optativo de Profundización</div>
-      </div>
-    </div>
-
-    <!-- 10° Semestre -->
-    <div class="cuadro-semestre">
-      <h2>Semestre 10</h2>
-      <div class="ramos">
-        <div class="ramo" data-id="civil8" data-credito="5">Derecho Civil VIII</div>
-        <div class="ramo" data-id="tesina" data-credito="8">Tesina</div>
-        <div class="ramo" data-id="opt3" data-credito="4">Optativo de Profundización</div>
-        <div class="ramo" data-id="opt4" data-credito="4">Optativo de Profundización</div>
-        <div class="ramo" data-id="practica" data-credito="12">Práctica Profesional</div>
-      </div>
-    </div>
-
   </div>
 
   <script src="script.js"></script>
