@@ -17,7 +17,7 @@ const ramosData = [
     ramos: [
       { nombre: "Derecho Económico I", creditos: 4 },
       { nombre: "Fundamentos Teológicos", creditos: 4 },
-      { nombre: "Integración del Saber II", creditos: 4 }
+      { nombre: "Integración del Saber I", creditos: 4 }
     ]
   },
   {
@@ -29,11 +29,11 @@ const ramosData = [
       { nombre: "Derecho Internacional Público I", creditos: 4, prerequisitos: ["Derecho Político"] },
       { nombre: "Derecho Económico II", creditos: 4, prerequisitos: ["Derecho Económico I"] },
       { nombre: "Derecho Canónico", creditos: 3, prerequisitos: ["Fundamentos Teológicos"] },
-      { nombre: "Integración del Saber  III", creditos: 4 }
+      { nombre: "Integración del Saber II", creditos: 4 }
     ]
   },
   {
-    semestre: "Semestre 4",
+     semestre: "Semestre 4",
     ramos: [
       { nombre: "Derecho Civil II", creditos: 5, prerequisitos: ["Derecho Civil I"] },
       { nombre: "Derecho Procesal II", creditos: 5, prerequisitos: ["Derecho Procesal I"] },
@@ -146,18 +146,10 @@ function crearMalla() {
       divRamo.className = "ramo";
       divRamo.textContent = `${ramo.nombre} (${ramo.creditos} cr)`;
 
-      let requisitosCumplidos = true;
-      if (ramo.prerequisitos) {
-        requisitosCumplidos = ramo.prerequisitos.every(req => {
-          if (req.includes("créditos")) {
-            const reqCreditos = parseInt(req);
-            return totalCreditosAprobados() >= reqCreditos;
-          }
-          return aprobados.has(req);
-        });
-      }
+      const requisitos = ramo.prerequisitos || [];
+      const requisitosCumplidos = requisitos.every(req => aprobados.has(req));
 
-      if (!requisitosCumplidos) {
+      if (!requisitosCumplidos && requisitos.length > 0) {
         divRamo.classList.add("bloqueado");
       }
 
